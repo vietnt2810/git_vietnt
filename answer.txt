@@ -1,0 +1,60 @@
+1. Untracked files: file có trong đường dẫn hiện tại nhưng chưa được add vào repo
+Tracked file gồm các state sau:
+- Unmodified: file chưa bị thay đổi kể từ lần commit gần nhất
+- Modified: file bị thay đổi so với lần commit gần nhất
+- Staged: file sẵn sàng để được commit 
+4. 
+	git clone git@github.com:vietnt2810/git_vietnt.git
+5. 
+	echo "# git_vietnt" >> README.md
+	git init
+	git add README.md
+	git commit -m "Init project"
+	git remote add origin git@github.com:vietnt2810/git_vietnt.git
+	git push -u origin master
+
+	Thêm file file1.txt
+	git add file1.txt
+	git commit -m "Commit 1"
+
+	Thêm file file2.txt
+	git add file2.txt
+	git commit -m "Commit 2"
+
+	Thêm file file3.txt
+	git add file3.txt
+	git commit -m "Commit 3"
+	
+	git push 
+6.
+	git branch feature-vietnt
+7. 
+	Thêm file commit1.txt
+	git add commit1.txt
+	git commit -m "Commit message 1"
+	
+	Thêm file commit2.txt
+	git add commit2.txt
+	git commit -m "Commit message 2"
+
+	Thêm file commit3.txt
+	git add commit3.txt
+	git commit -m "Commit message 3"
+8.
+	git checkout -b feature-vietnt-rebase
+9.
+	git rebase -i HEAD~3
+	Sau đó sửa “pick” ở 2 commit sau thành “squash”, :wq! để lưu lại
+	Để đổi tên commit -> git commit --amend -m "Git rebase"
+	git push --force-with-lease origin HEAD
+10.
+	git checkout -b feature-vietnt-merge
+11.
+	git reset --hard HEAD~1
+	git push origin feature-vietnt-merge
+13.
+	git add .
+	git commit -m "Git conflict"
+14.	
+	git merge feature-vietnt
+	=> Ko có conflict
